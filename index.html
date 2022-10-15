@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UseOfMath.JsLibraries</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.2.1/math.js"></script>
+</head>
+
+<body>
+<h1> <u> MATH JS LIBRARY </u> </h1>
+
+<h2>Calculate Sqaure Root</h2>
+
+<form onsubmit="SqaureRoot(); return false">
+    <input type="number" id="SqrRoot" placeholder="enter any number to find Sqaure Root">
+    <br>
+    <button type="submit">Calculate Sqaure Root</button>
+</form>
+
+
+<h3 id="result1"></h3>
+<h2>Find Degree</h2>
+
+<form onsubmit="findDegree(); return false">
+    <input type="text" id="fDegree" placeholder="sin(45 deg^2)">
+    <br>
+    <button type="submit">Calculate Degree</button>
+</form>
+
+
+<h3 id="result2"></h3>
+
+
+<h3 id="result3"></h3>
+
+
+<script>
+    
+//////**********functions and constant************//////////////
+console.log("functions and constant")
+
+let SqaureRoot = () => {
+
+    let Sqaure = +document.querySelector("#SqrRoot").value;
+
+    let result = math.sqrt(Sqaure);
+    console.log(result);
+    document.querySelector("#result1").innerHTML = result;
+}
+
+
+
+
+
+
+console.log(math.log(10000, 10));
+console.log(math.sqrt(8));
+
+//////**********expression************//////////////
+
+console.log("expression")
+
+let findDegree = () => {
+
+let Degree = document.querySelector("#fDegree").value;
+
+let result = math.evaluate(Degree);
+
+
+console.log(result);
+document.querySelector("#result2").innerHTML = result;
+}
+
+
+
+
+
+
+
+
+console.log(math.evaluate('12 / (2.3 + 0.7)'));
+console.log(math.evaluate('sin(45 deg)^2'));
+
+//////**********chained operation************//////////////
+
+console.log("chained operation")
+console.log(
+    math.chain(3)
+    .add(4)
+    .multiply(2)
+    .done()
+);
+
+
+</script>
+
+
+</body>
+
+</html>
